@@ -1,0 +1,816 @@
+@charset "UTF-8";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  font-family: "Volkhov", serif, "Nanum Gothic", sans-serif;
+  overflow: hidden;
+}
+
+/*mobile*/
+@media (max-width: 600px) {
+  /*header.pc*/
+  header.pc {
+    width: 100%;
+    height: 90px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+    display: none;
+  }
+  header.pc h1 {
+    width: 120px;
+    height: 100%;
+  }
+
+  header.pc h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu*/
+  header.pc .menu {
+    width: 850px;
+    height: 91px;
+    text-align: center;
+  }
+
+  /*big_menu*/
+  header.pc .menu .big_menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  header.pc .menu .big_menu > li {
+    width: calc(100% / 5);
+    height: 100%;
+    line-height: 100px;
+    font-family: "Nanumgothic", serif;
+  }
+  header.pc .menu .big_menu > li > a {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  header.pc .menu .big_menu img {
+    vertical-align: middle;
+  }
+  header.pc .menu .big_menu > li:hover {
+    background-color: #313a6b;
+  }
+
+  /*small_menu*/
+  header.pc .menu .small_menu {
+    font-family: "Nanum Gothic", sans-serif;
+    background-color: #fff;
+    display: none;
+  }
+  header.pc .menu .small_menu > li {
+    line-height: 45px;
+  }
+  header.pc .menu .small_menu > li > a {
+    color: #666;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu_bar*/
+  /*menu_bar*/
+  header.mo .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /*header.mo*/
+  header.mo {
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  }
+  header.mo h1 {
+    width: 100px;
+    height: 100%;
+  }
+
+  header.mo h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  header.mo h1 a img {
+    width: 90%;
+    height: 100%;
+  }
+
+  header.mo .menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    height: 100vh;
+    background-color: #313a6b;
+    z-index: 1;
+    display: none;
+  }
+  header.mo .menu a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+  }
+  /*menu_bar*/
+  header.mo .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  /*mo_bar*/
+  header.mo .menu .mo_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: translateX(220px);
+    margin: 20px 0px;
+  }
+
+  /*big_menu*/
+  header.mo .menu .big_menu > li {
+    padding: 5px 20px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  header.mo .menu .big_menu > li > a {
+    display: flex;
+    justify-content: space-between;
+  }
+  header.mo .menu .big_menu .icon {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+  }
+  header.mo .menu .big_menu .minus1 {
+    position: absolute;
+    top: 48.5%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  header.mo .menu .big_menu .minus2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .on {
+    display: none;
+  }
+
+  /*small_menu*/
+  header.mo .menu .small_menu {
+    width: 300px;
+    font-family: "Nanum Gothic", sans-serif;
+    box-shadow: inset 0px 3px 9px rgba(0, 0, 0, 0.3);
+    display: none;
+    transform: translateX(-20px);
+  }
+  header.mo .menu .small_menu > li {
+    width: 100%;
+    background-color: #fff;
+  }
+  header.mo .menu .small_menu > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #666;
+    padding-left: 20px;
+  }
+
+  /*modal*/
+  .modal {
+    display: none;
+  }
+
+  /*visual*/
+  #visual {
+    background-image: url(../img/jiyugaoka_visual.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  #visual .txt {
+    color: #fff;
+    text-align: center;
+  }
+  #visual .txt h3 {
+    font-size: 1rem;
+  }
+  #visual .txt h2 {
+    font-size: 3rem;
+    margin: 10px 0px 30px 0px;
+  }
+  #visual .txt p {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+/*tablet*/
+@media (min-width: 600px) and (max-width: 1220px) {
+  /*header.pc*/
+  header.pc {
+    width: 100%;
+    height: 90px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+    display: none;
+  }
+  header.pc h1 {
+    width: 120px;
+    height: 100%;
+  }
+
+  header.pc h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu*/
+  header.pc .menu {
+    width: 850px;
+    height: 91px;
+    text-align: center;
+  }
+
+  /*big_menu*/
+  header.pc .menu .big_menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  header.pc .menu .big_menu > li {
+    width: calc(100% / 5);
+    height: 100%;
+    line-height: 100px;
+    font-family: "Nanumgothic", serif;
+  }
+  header.pc .menu .big_menu > li > a {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  header.pc .menu .big_menu img {
+    vertical-align: middle;
+  }
+  header.pc .menu .big_menu > li:hover {
+    background-color: #313a6b;
+  }
+
+  /*small_menu*/
+  header.pc .menu .small_menu {
+    font-family: "Nanum Gothic", sans-serif;
+    background-color: #fff;
+    display: none;
+  }
+  header.pc .menu .small_menu > li {
+    line-height: 45px;
+  }
+  header.pc .menu .small_menu > li > a {
+    color: #666;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu_bar*/
+  /*menu_bar*/
+  header.mo .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /*header.mo*/
+  header.mo {
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  }
+  header.mo h1 {
+    width: 110px;
+    height: 100%;
+  }
+
+  header.mo h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  header.mo h1 a img {
+    width: 90%;
+    height: 100%;
+  }
+
+  header.mo .menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    height: 100vh;
+    background-color: #313a6b;
+    z-index: 1;
+    display: none;
+  }
+  header.mo .menu a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+  }
+  /*menu_bar*/
+  header.mo .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /*mo_bar*/
+  header.mo .menu .mo_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: translateX(220px);
+    margin: 20px 0px;
+  }
+
+  /*big_menu*/
+  header.mo .menu .big_menu > li {
+    padding: 5px 20px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  header.mo .menu .big_menu > li > a {
+    display: flex;
+    justify-content: space-between;
+  }
+  header.mo .menu .big_menu .icon {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+  }
+  header.mo .menu .big_menu .minus1 {
+    position: absolute;
+    top: 48.5%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  header.mo .menu .big_menu .minus2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .on {
+    display: none;
+  }
+
+  /*small_menu*/
+  header.mo .menu .small_menu {
+    width: 300px;
+    font-family: "Nanum Gothic", sans-serif;
+    box-shadow: inset 0px 3px 9px rgba(0, 0, 0, 0.3);
+    display: none;
+    transform: translateX(-20px);
+  }
+  header.mo .menu .small_menu > li {
+    width: 100%;
+    background-color: #fff;
+  }
+  header.mo .menu .small_menu > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #666;
+    padding-left: 20px;
+  }
+
+  /*modal*/
+  .modal {
+    display: none;
+  }
+
+  /*visual*/
+  #visual {
+    background-image: url(../img/jiyugaoka_visual.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  #visual .txt {
+    color: #fff;
+    text-align: center;
+  }
+  #visual .txt h3 {
+    font-size: 1.5rem;
+  }
+  #visual .txt h2 {
+    font-size: 4rem;
+    margin: 10px 0px 30px 0px;
+  }
+  #visual .txt p {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+/*pc*/
+@media (min-width: 1220px) {
+  /*header.mo*/
+  header.mo {
+    width: 100%;
+    height: 90px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+    display: none;
+  }
+  header.mo h1 {
+    width: 120px;
+    height: 100%;
+  }
+
+  header.mo h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  header.mo .menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 300px;
+    height: 100vh;
+    background-color: #313a6b;
+    z-index: 1;
+    display: none;
+  }
+  header.mo .menu a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+  }
+  /*menu_bar*/
+  header.mo .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /*mo_bar*/
+  header.mo .menu .mo_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    display: inline-block;
+    transform: translateX(260px);
+    margin: 20px 0px;
+  }
+
+  /*big_menu*/
+  header.mo .menu .big_menu > li {
+    padding: 5px 20px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  header.mo .menu .big_menu > li > a {
+    display: flex;
+    justify-content: space-between;
+  }
+  header.mo .menu .big_menu .icon {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+  }
+  header.mo .menu .big_menu .minus1 {
+    position: absolute;
+    top: 48.5%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  header.mo .menu .big_menu .minus2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .on {
+    display: none;
+  }
+
+  /*small_menu*/
+  header.mo .menu .small_menu {
+    width: 300px;
+    font-family: "Nanum Gothic", sans-serif;
+    box-shadow: inset 0px 3px 9px rgba(0, 0, 0, 0.3);
+    display: none;
+    transform: translateX(-20px);
+  }
+  header.mo .menu .small_menu > li {
+    width: 100%;
+    background-color: #fff;
+  }
+  header.mo .menu .small_menu > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #666;
+    padding-left: 20px;
+  }
+
+  /*header.pc*/
+  header.pc {
+    width: 100%;
+    height: 90px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  }
+  header.pc h1 {
+    width: 120px;
+    height: 100%;
+  }
+
+  header.pc h1 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu*/
+  header.pc .menu {
+    width: 850px;
+    height: 91px;
+    text-align: center;
+  }
+
+  /*big_menu*/
+  header.pc .menu .big_menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  header.pc .menu .big_menu > li {
+    width: calc(100% / 5);
+    height: 100%;
+    line-height: 100px;
+  }
+  header.pc .menu .big_menu > li > a {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  header.pc .menu .big_menu img {
+    vertical-align: middle;
+  }
+  header.pc .menu .big_menu > li:hover {
+    background-color: #313a6b;
+  }
+
+  /*small_menu*/
+  header.pc .menu .small_menu {
+    font-family: "Nanum Gothic", sans-serif;
+    background-color: #fff;
+    display: none;
+  }
+  header.pc .menu .small_menu > li {
+    line-height: 45px;
+  }
+  header.pc .menu .small_menu > li > a {
+    color: #666;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /*menu_bar*/
+  header.pc .menu_bar {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /*modal*/
+  .modal {
+    font-family: "Noto Sans KR", sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .modal_box {
+    width: 1000px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal_box h2 {
+    font-size: 1.5rem;
+    background-color: #313a6b;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    line-height: 30px;
+  }
+  .modal.on {
+    display: block;
+  }
+
+  /*close*/
+  .close {
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    transform: translate(400px, 6px);
+  }
+
+  /*modal_menu*/
+  .modal_menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .modal_menu > li {
+    width: calc(100% / 4 - 10px);
+  }
+  .modal_menu p {
+    font-size: 1rem;
+    border-bottom: 1px solid #000;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  /*modal_sub*/
+  .modal_sub {
+    margin: 20px 0px;
+    width: 100%;
+  }
+  .modal_sub li {
+    width: 100%;
+    line-height: 35px;
+  }
+  .modal_sub li a {
+    color: #666;
+    font-size: 0.8rem;
+  }
+  .modal_sub li a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  /*visual*/
+  #visual {
+    background-image: url(../img/jiyugaoka_visual.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #visual .txt {
+    color: #fff;
+    text-align: center;
+  }
+  #visual .txt h3 {
+    font-size: 1.5rem;
+  }
+  #visual .txt h2 {
+    font-size: 5rem;
+    margin-bottom: 50px;
+  }
+  #visual .txt p {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
